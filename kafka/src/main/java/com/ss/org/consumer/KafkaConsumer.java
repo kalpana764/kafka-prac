@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Log4j2
 public class KafkaConsumer {
 
-    @KafkaListener(topics = "demo", groupId = "groupId")
+    @KafkaListener(topics = "${kafka.topic.name}", groupId = "groupId")
     public void consumeMessage(String message){
        log.info("Message consumed : {}", message);
     }
